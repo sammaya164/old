@@ -16,11 +16,11 @@ minimal_mistakes_skin    : "mint" # "default", "air", "aqua", "contrast", "dark"
 
 # Site Settings
 locale                   : "Ja"
-title                    : "VBScript"
+title                    : "VBScriptさんま屋"
 title_separator          : "-"
-subtitle                 : "Subtitle" # site tagline that appears below site title in masthead
+subtitle                 : "Blog about VBScript" # site tagline that appears below site title in masthead
 name                     : "sammaya"
-description              : "Blog about VBScript"
+description              : ""
 url                      : # the base hostname & protocol for your site e.g. "https://mmistakes.github.io"
 baseurl                  : /vbscript2 # the subpath of your site, e.g. "/blog"
 repository               : # GitHub username/repo-name e.g. "mmistakes/minimal-mistakes"
