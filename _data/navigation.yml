@@ -1,7 +1,7 @@
 # main links
 main:
-   - title: "VBScript"
-     url: /
+  # - title: "VBScript"
+  #   url: /
   # - title: "About"
   #   url: https://mmistakes.github.io/minimal-mistakes/about/
   # - title: "Sample Posts"
@@ -21,7 +21,7 @@ docs:
       - title: "MsgBox"
         url: /msgbox/
       - title: ""
-        url: //
+        url: /
   - title: その他
     children:
       - title: "VBScriptの暗号化"
