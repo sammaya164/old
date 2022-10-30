@@ -1,6 +1,9 @@
 ---
-layout: post
 title: "ファイル名、パス名を取得する"
+permalink: /path/
+excerpt: "FileSystemObjectオブジェクト"
+last_modified_at: 2021-11-14T00:00:00-02:00
+toc: false
 ---
 
 ## FileSystemObjectのファイル名、パス名を返すメソッド
