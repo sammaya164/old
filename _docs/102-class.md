@@ -1,6 +1,9 @@
 ---
-layout: post
 title: "Classを自作する"
+permalink: /class/
+excerpt: ""
+last_modified_at: 2021-11-07T00:00:00-02:00
+toc: false
 ---
 
 クラスの使用例。
