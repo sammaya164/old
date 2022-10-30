@@ -1,6 +1,9 @@
 ---
-layout: post
-title: "SplitとJoin"
+title: "配列"
+permalink: /filter/
+excerpt: "Split関数、Join関数"
+last_modified_at: 2021-11-01T00:00:00-02:00
+toc: false
 ---
 
 Split関数は文字列から配列を作成する。
