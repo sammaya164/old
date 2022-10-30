@@ -1,7 +1,7 @@
 # main links
 main:
    - title: "VBScript"
-     url: https://www.sammaya.jp/vbscript2/
+     url: /vbscript2/
   # - title: "About"
   #   url: https://mmistakes.github.io/minimal-mistakes/about/
   # - title: "Sample Posts"
@@ -14,28 +14,16 @@ main:
 
 # documentation links
 docs:
-  - title: Getting Started
+  - title: 基本
     children:
-      - title: "Quick-Start Guide"
-        url: /docs/quick-start-guide/
-      - title: "Structure"
-        url: /docs/structure/
-      - title: "Installation"
-        url: /docs/installation/
-      - title: "Upgrading"
-        url: /docs/upgrading/
-  - title: Customization
+      - title: "InputBox"
+        url: /inputbox/
+      - title: "MsgBox"
+        url: /msgbox/
+      - title: ""
+        url: //
+  - title: その他
     children:
-      - title: "Configuration"
-        url: /docs/configuration/
-      - title: "Overriding Theme Defaults"
-        url: /docs/overriding-theme-defaults/
-      - title: "Navigation"
-        url: /docs/navigation/
-      - title: "UI Text"
-        url: /docs/ui-text/
-      - title: "Authors"
-        url: /docs/authors/
-      - title: "Layouts"
-        url: /docs/layouts/
+      - title: "VBScriptの暗号化"
+        url: /endoder/
         
