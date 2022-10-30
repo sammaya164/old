@@ -4,6 +4,7 @@ permalink: /encoder/
 excerpt: "scrrun.dllのEncoderオブジェクトを利用してVBScriptを暗号化するスクリプトを作成できる"
 last_modified_at: 2021-10-30T00:00:00-02:00
 toc: true
+categories: "その他"
 
 ---
 
