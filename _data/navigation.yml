@@ -25,5 +25,5 @@ docs:
   - title: その他
     children:
       - title: "VBScriptの暗号化"
-        url: /endoder/
+        url: /encoder/
         
