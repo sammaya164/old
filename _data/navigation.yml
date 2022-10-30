@@ -1,15 +1,15 @@
 # main links
 main:
    - title: "VBScript"
-     url: /vbscript2/
+     url: /
   # - title: "About"
   #   url: https://mmistakes.github.io/minimal-mistakes/about/
   # - title: "Sample Posts"
   #   url: /year-archive/
   # - title: "Sample Collections"
   #   url: /collection-archive/
-   - title: "Sitemap"
-     url: /sitemap.xml
+  # - title: "Sitemap"
+  #   url: /sitemap.xml
 
 
 # documentation links
