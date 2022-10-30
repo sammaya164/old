@@ -1,6 +1,9 @@
 ---
-layout: post
 title: "ファイル名の頭に日付を加える"
+permalink: /rename/
+excerpt: ""
+last_modified_at: 2021-11-13T00:00:00-02:00
+toc: false
 ---
 
 ファイル(フォルダ)をドラッグ＆ドロップすると名前を変更する。
