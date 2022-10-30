@@ -1,6 +1,9 @@
 ---
-layout: post
 title: "ファイル一覧を取得する"
+permalink: /filelist/
+excerpt: ""
+last_modified_at: 2021-11-07T00:00:00-02:00
+toc: false
 ---
 
 深さを指定してファイルとフォルダの一覧を取得し、テキストファイル`out.txt`へ出力する。
