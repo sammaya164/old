@@ -4,7 +4,6 @@ permalink: /encoder/
 excerpt: "scrrun.dllのEncoderオブジェクトを利用してVBScriptを暗号化するスクリプトを作成できる"
 last_modified_at: 2021-10-30T00:00:00-02:00
 toc: false
-
 ---
 
 VBScriptを個人で使用する場合は問題無いが、組織内の不特定多数で使用する場合にはコードを改変される可能性がある。
