@@ -20,6 +20,22 @@ docs:
         url: /inputbox/
       - title: "MsgBox"
         url: /msgbox/
+      - title: "Hello, World!と表示させる方法"
+        url: /helloworld/
+  - title: 配列
+    children:
+      - title: "配列の作り方"
+        url: /array/
+      - title: "配列の作り方2"
+        url: /dim/
+      - title: "配列"
+        url: /filter/
+      - title: "For文と配列"
+        url: /for/
+      - title: ""
+        url: /
+      - title: ""
+        url: /
       - title: ""
         url: /
   - title: その他
