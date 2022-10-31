@@ -1,7 +1,6 @@
 ---
 title: "Hello, World!と表示させる方法"
 permalink: /helloworld/
-excerpt: ""
 last_modified_at: 2021-10-30T00:00:00-02:00
 toc: false
 ---
