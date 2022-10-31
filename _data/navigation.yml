@@ -36,10 +36,10 @@ docs:
         url: /for/
       - title: "Split関数、Join関数"
         url: /split/
-      - title: "配列を初期化する"
-        url: /erase/
       - title: "LBound関数、UBound関数"
         url: /ubound/
+      - title: "配列を初期化する"
+        url: /erase/
   - title: "ファイル操作"
     children:
       - title: "ファイル一覧を取得する"
