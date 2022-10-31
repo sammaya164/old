@@ -1,9 +1,7 @@
 ---
-title: "InputBox"
+title: "InputBox関数"
 permalink: /inputbox/
-excerpt: "VBScriptの標準的な入力機能としてInputBox関数がある"
 last_modified_at: 2021-10-30T00:00:00-02:00
-categories: "基本"
 ---
 
 VBScriptの標準的な入力機能としてInputBox関数がある。
