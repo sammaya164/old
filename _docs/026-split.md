@@ -1,7 +1,6 @@
 ---
-title: "配列"
-permalink: /filter/
-excerpt: "Split関数、Join関数"
+title: "Split関数、Join関数"
+permalink: /split/
 last_modified_at: 2021-11-01T00:00:00-02:00
 toc: false
 ---
