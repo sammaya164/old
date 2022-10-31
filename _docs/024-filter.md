@@ -1,7 +1,6 @@
 ---
-title: "配列"
+title: "Filter関数"
 permalink: /filter/
-excerpt: "Filter関数"
 last_modified_at: 2021-11-01T00:00:00-02:00
 toc: false
 ---
