@@ -14,31 +14,41 @@ main:
 
 # documentation links
 docs:
-  - title: 基本
+  - title: "基本"
     children:
-      - title: "InputBox"
+      - title: "InputBox関数"
         url: /inputbox/
-      - title: "MsgBox"
+      - title: "MsgBox関数"
         url: /msgbox/
       - title: "Hello, World!と表示させる方法"
         url: /helloworld/
-  - title: 配列
+      - title: "クラスを自作する"
+        url: /class/
+  - title: "配列"
     children:
-      - title: "配列の作り方"
+      - title: "配列の作り方1(Array関数)"
         url: /array/
-      - title: "配列の作り方2"
+      - title: "配列の作り方2(DimとReDim)"
         url: /dim/
-      - title: "配列"
+      - title: "Filter関数"
         url: /filter/
-      - title: "For文と配列"
+      - title: "For文で配列要素を取り出す"
         url: /for/
-      - title: ""
-        url: /
-      - title: ""
-        url: /
-      - title: ""
-        url: /
-  - title: その他
+      - title: "Split関数、Join関数"
+        url: /split/
+      - title: "配列を初期化する"
+        url: /erase/
+      - title: "LBound関数、UBound関数"
+        url: /ubound/
+  - title: "ファイル操作"
+    children:
+      - title: "ファイル一覧を取得する"
+        url: /filelist/"
+      - title: "ファイル名の頭に日付を加える"
+        url: /rename/
+      - title: "ファイル名、パス名を取得する"
+        url: /path/
+  - title: "その他"
     children:
       - title: "VBScriptの暗号化"
         url: /encoder/
