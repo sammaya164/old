@@ -1,7 +1,6 @@
 ---
-title: "配列の作り方"
+title: "配列の作り方1(Array関数)"
 permalink: /array/
-excerpt: "Array関数"
 last_modified_at: 2021-11-01T00:00:00-02:00
 toc: false
 ---
