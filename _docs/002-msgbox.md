@@ -1,7 +1,6 @@
 ---
-title: "MsgBox"
+title: "MsgBox関数"
 permalink: /msgbox/
-excerpt: "VBScriptの標準的な出力機能としてMsgBox関数がある"
 last_modified_at: 2021-10-30T01:00:00-02:00
 ---
 
