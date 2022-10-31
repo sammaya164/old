@@ -1,7 +1,6 @@
 ---
-title: "配列の添字番号"
+title: "LBound関数、UBound関数"
 permalink: /ubound/
-excerpt: "LBound関数、UBound関数"
 last_modified_at: 2021-11-02T00:00:00-02:00
 toc: false
 ---
