@@ -15,6 +15,7 @@ fruit(0) = "みかん"
 fruit(1) = "りんご"
 fruit(2) = "メロン"
 
+MsgBox Join(fruit, ",") 'みかん,りんご,メロンと表示される
 Erase fruit '配列を初期化
 MsgBox Join(fruit, ",") ',,と表示される
 {% endhighlight %}
