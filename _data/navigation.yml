@@ -43,7 +43,7 @@ docs:
   - title: "ファイル操作"
     children:
       - title: "ファイル一覧を取得する"
-        url: /filelist/"
+        url: /filelist/
       - title: "ファイル名の頭に日付を加える"
         url: /rename/
       - title: "ファイル名、パス名を取得する"
