@@ -109,8 +109,8 @@ Set P1 = Nothing
 Set P2 = Nothing
 ```
 
-戦闘開始で勇者のAtackメソッドを呼び出すと、ダメージを引数に魔王のDamageメソッドが呼び出され、魔王の生死判定後、生なら魔王のAtackメソッドが呼び出され、以下同様。
-
 上記コードをメモ帳などに貼り付け、文字コードをShift_JISとし、maou.vbsなどの名前で保存。ダブルクリックすると起動します。
+
+魔王と勇者、どちらかが倒れるまで戦闘が続きます。
 
 ![まおう](/vbscript/assets/images/class_maou.png)
