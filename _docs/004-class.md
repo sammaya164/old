@@ -7,7 +7,7 @@ toc: false
 
 クラスの使用例。
 
-![まおゆう](/vbscript/assets/images/class_maou.png)
+![まおう](/vbscript/assets/images/class_maou.png)
 
 ```vb
 'クラス宣言
