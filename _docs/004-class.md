@@ -51,7 +51,7 @@ Class C_Player
         'プロシージャ内ならDimを使える
         Dim buf
         buf = Int(m_strength * Rnd())
-        Msgbox Name & "の攻撃!"
+        Msgbox Name & "の攻撃！"
         m_enemy.Damage(buf)
     End Sub
     
@@ -60,9 +60,9 @@ Class C_Player
         m_life = m_life - val
         If m_life < 0 Then m_life = 0
         Msgbox Name & "は" & val & "のダメージを受けた" _
-        & vbCr & "(´・ω・) HP:" & m_life & "/" & m_max
+        & vbCr & "(´・ω・) " & m_life & "/" & m_max
         If HasDead Then
-            Msgbox Name & "は倒れた!" & vbCr & "( -ω-) ｽﾔｧ"
+            Msgbox Name & "は倒れた！" & vbCr & "( -ω-) ｽﾔｧ"
         Else
             Call Atack()
         End If
