@@ -46,6 +46,10 @@ docs:
         url: /rename/
       - title: "ファイル名、パス名を取得する"
         url: /path/
+  - title: "データベース接続"
+    children:
+      - title: "Access形式のデータベースに接続する1"
+        url: /oledb/
   - title: "その他"
     children:
       - title: "VBScriptの暗号化"
