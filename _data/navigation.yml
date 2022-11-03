@@ -48,7 +48,7 @@ docs:
         url: /path/
   - title: "データベース接続"
     children:
-      - title: "Access形式のデータベースに接続する1"
+      - title: "Access形式データベースへの接続1"
         url: /oledb/
   - title: "その他"
     children:
