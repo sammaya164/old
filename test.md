@@ -2,6 +2,11 @@
 title: Title
 description: Description
 permalink: /test/
+
+---
+
+test
+
 header:
   #image: /assets/images/computer.jpg
   overlay_image: /vbscript/assets/images/about_382.jpg
@@ -14,6 +19,3 @@ header:
       url: "https://www.sammaya.jp/comp/"
 layout: single
 #author_profile: true
----
-
-test
