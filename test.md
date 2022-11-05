@@ -5,7 +5,7 @@ header:
   #image: /assets/images/computer.jpg
   overlay_image: /vbscript/assets/images/about_382.jpg
 permalink: /test/
-
+layout: single
 ---
 
 test
