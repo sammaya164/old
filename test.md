@@ -1,6 +1,7 @@
 ---
 title: Title
 description: Description
+permalink: /test/
 header:
   #image: /assets/images/computer.jpg
   overlay_image: /vbscript/assets/images/about_382.jpg
