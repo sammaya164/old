@@ -49,7 +49,7 @@ docs:
   - title: "データベース接続"
     children:
       - title: "Access形式データベースへの接続1"
-        url: /oledb/
+        url: /mdb1/
   - title: "その他"
     children:
       - title: "VBScriptの暗号化"
