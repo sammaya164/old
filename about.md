@@ -7,10 +7,10 @@ sidebar:
 description: Description
 excerpt: Excerpt
 header:
-  overlay_image: /assets/images/about_382.jpg
+  #overlay_image: /assets/images/about_382.jpg
 
-  # overlay_filter: 0.5
-  caption: "Image by [Anil sharma](https://pixabay.com/users/anilsharma26-13475484/?utm_source=link-attribution&amp;utm_medium=referral&amp;utm_campaign=image&amp;utm_content=7017939) from [Pixabay](https://pixabay.com//?utm_source=link-attribution&amp;utm_medium=referral&amp;utm_campaign=image&amp;utm_content=7017939)"
+  overlay_filter: 0.5
+  #caption: "Image by [Anil sharma](https://pixabay.com/users/anilsharma26-13475484/?utm_source=link-attribution&amp;utm_medium=referral&amp;utm_campaign=image&amp;utm_content=7017939) from [Pixabay](https://pixabay.com//?utm_source=link-attribution&amp;utm_medium=referral&amp;utm_campaign=image&amp;utm_content=7017939)"
   actions:
     - label: "VBScriptさんま屋"
       url: "https://www.sammaya.jp/vbscript/"
@@ -18,15 +18,8 @@ header:
       url: "https://www.sammaya.jp/comp/"
 ---
 
-VBScriptの個人的なメモです。
 
-
-![about](/vbscript/assets/images/about_382.jpg)
-
-Image by [Anil sharma](https://pixabay.com/users/anilsharma26-13475484/?utm_source=link-attribution&amp;utm_medium=referral&amp;utm_campaign=image&amp;utm_content=7017939) from [Pixabay](https://pixabay.com//?utm_source=link-attribution&amp;utm_medium=referral&amp;utm_campaign=image&amp;utm_content=7017939)
-
-
-<div class="page__hero--overlay"
+<div
   style=" background-image: url('/vbscript/assets/images/about_382.jpg');"
 >
   
@@ -38,21 +31,19 @@ Image by [Anil sharma](https://pixabay.com/users/anilsharma26-13475484/?utm_sour
         
       </h1>
       
-        <p class="page__lead">Excerpt
-</p>
+      <p class="page__lead">Excerpt
+      </p>
       
       
 
 
       
       
-        <p>
+      <p>
         
-          <a href="https://www.sammaya.jp/vbscript/" class="btn btn--light-outline btn--large">VBScriptさんま屋</a>
-        
+          <a href="https://www.sammaya.jp/vbscript/" class="btn btn--light-outline btn--large">VBScriptさんま屋</a>  
           <a href="https://www.sammaya.jp/comp/" class="btn btn--light-outline btn--large">電脳宮殿</a>
         
-      
     </div>
   
   
