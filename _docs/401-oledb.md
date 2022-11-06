@@ -49,34 +49,93 @@ VBScriptを動かしているWSHにも32bit版と64bit版があります。
 
 ## MDBファイルを作成する
 
-Accessがインストールされていなくても、VBScriptからMDBファイルを作成し、使用することができます。
-
+Accessがインストールされていなくても、VBScriptでMDBファイルを作成することができます。
 
 ```vb
 Dim con 'Connectionオブジェクト
 Dim cat 'Catalogオブジェクト
 Dim tbl 'Tableオブジェクト
+Dim cols 'Columnsオブジェクト
 
 Set con = CreateObject("ADODB.Connection")
 Set cat = CreateObject("ADOX.Catalog")
 Set tbl = CreateObject("ADOX.Table")
 
+'test.mdbを削除する
+'call ClearTestFile("test.mdb") '必要に応じてアンコメント
+
 con.ConnectionString = "Provider=Microsoft.JET.OLEDB.4.0;Data Source=test.mdb;" '接続文字列
 
-Msgbox con.Mode '
-
 cat.Create con 'データベースを作成
-
-Msgbox con.Mode '
 
 tbl.Name = "data" 'テーブル名を設定
 
 cat.Tables.Append tbl 'テーブルを追加
 
-con.Close
+'dataテーブルが存在しているのを確認する
+Msgbox GetTableInfo(cat.Tables)
+
+Set cols = cat.Tables("data").Columns
+
+'列を追加する
+cols.Append "短整数",   2 'VBScriptのInt型に対応
+cols.Append "整数"  ,   3 'VBScriptのLong型に対応
+cols.Append "テキスト", 202
+
+'列を削除する
+cols.Delete "短整数"
+
+'列を確認する
+Msgbox GetColInfo(cols)
+
+'終了
 
 
 
+'ファイルを削除する
+Function ClearTestFile(fileName)
+    Dim fso
+    
+    Set fso = CreateObject("Scripting.FileSystemObject")
+    
+    If fso.FileExists(fileName) Then
+        fso.DeleteFile fileName
+
+    End If
+
+End Function
+
+
+
+'Tablesコレクションに含まれるテーブルの名前とタイプを返す
+Function GetTableInfo(tables)
+    Dim table
+    Dim buf
+
+    For Each table In tables
+        buf = buf & table.Name & ", " & table.Type & vbCr 
+
+    Next
+
+    GetTableInfo = buf
+
+End Function
+
+
+
+'Columnsコレクションに含まれる列の名前とタイプとサイズを返す
+Function GetColInfo(cols)
+    Dim col
+    Dim buf
+
+    For Each col In cols
+        buf = buf & col.Name & ", タイプ: " & col.Type & vbCr 
+
+    Next
+
+    GetColInfo = buf
+
+End Function
 ```
 
 
