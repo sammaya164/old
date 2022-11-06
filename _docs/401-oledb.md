@@ -39,18 +39,46 @@ Microsoft.Jet.OLEDB.4.0    Microsoft Jet 4.0 OLE DB Provider
 
 以上から自分の環境では64bit版の「Microsoft.ACE.OLEDB.12.0」、「Microsoft.ACE.OLEDB.16.0」と
 32bit版の「Microsoft.Jet.OLEDB.4.0」が利用できることが分かります。
+
 自分の環境は64bit版Officeをインストール済みなのでこのような構成になっているものと思われます。
-{: .text-left}
 
 VBScriptを動かしているWSHにも32bit版と64bit版があります。
-
-一見、32bit版WSHからは「Microsoft.Jet.OLEDB.4.0」を、
-64bit版WSHからは「Microsoft.ACE.OLEDB.12.0」、「Microsoft.ACE.OLEDB.16.0」を利用できそうに思います。
-ところが、64bit版WSHからはデータベース接続に使うADODB.Connectionオブジェクトを使用できないようです。(VBAからは可能)
-{: .text-left}
+しかし、64bit版WSHからはデータベース接続に使うADODB.Connectionオブジェクトを使用できないようです。(VBAからは可能)
 
 したがって自分の環境でAccess形式データベースへ接続するには、32bit版WSHから`Microsoft.Jet.OLEDB.4.0`を利用することになります。
-(勉強が目的なので、それで問題ありません。)
+
+## MDBファイルを作成する
+
+Accessがインストールされていなくても、VBScriptからMDBファイルを作成し、使用することができます。
+
+
+```vb
+Dim con 'Connectionオブジェクト
+Dim cat 'Catalogオブジェクト
+Dim tbl 'Tableオブジェクト
+
+Set con = CreateObject("ADODB.Connection")
+Set cat = CreateObject("ADOX.Catalog")
+Set tbl = CreateObject("ADOX.Table")
+
+con.ConnectionString = "Provider=Microsoft.JET.OLEDB.4.0;Data Source=test.mdb;" '接続文字列
+
+Msgbox con.Mode '
+
+cat.Create con 'データベースを作成
+
+Msgbox con.Mode '
+
+tbl.Name = "data" 'テーブル名を設定
+
+cat.Tables.Append tbl 'テーブルを追加
+
+con.Close
+
+
+
+```
+
 
 ## 参考
 
