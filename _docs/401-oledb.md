@@ -1,7 +1,7 @@
 ---
 title: "Access形式データベースへの接続1"
-permalink: /oledb/
-last_modified_at: 2022-11-03T17:00:00+09:00
+permalink: /mdb1/
+last_modified_at: 2022-11-06T11:00:00+09:00
 toc: true
 ---
 
@@ -66,7 +66,7 @@ Set cat = CreateObject("ADOX.Catalog")
 Set tbl = CreateObject("ADOX.Table")
 
 'test.mdbを削除する
-call ClearTestFile("test.mdb")
+'call ClearTestFile("test.mdb") '必要に応じアンコメントする
 
 con.ConnectionString = "Provider=Microsoft.JET.OLEDB.4.0;Data Source=test.mdb;" '接続文字列
 
@@ -94,9 +94,6 @@ Msgbox GetColInfo(cols)
 
 '列を確認する2
 Msgbox GetColInfo2(cols)
-
-
-'終了
 
 
 
@@ -162,11 +159,13 @@ Function GetColInfo2(cols)
 End Function
 ```
 
+
 64bitのWindowsでは、上記スクリプトファイルをWクリックで起動してもConnectionオブジェクトが動かないのでエラーになります。
 
 32bit版のWSHから起動するために、下記スクリプトファイルを作成し、これに上記スクリプトファイルをドラッグ&ドロップすると正常に動作するはずです。
 
 どちらもShift_JISの文字コードで保存してください。
+
 
 ```vb
 'このスクリプトファイルにドラッグ&ドロップしたスクリプトファイルを32bit版のWSHで実行する
@@ -193,6 +192,9 @@ If WScript.Arguments.Count = 1 Then '1ファイルをドラッグ＆ドロップ
 
 End If
 ```
+
+スクリプトファイルと同じフォルダ内にtest.mdbが作成されたと思います。
+
 
 ## 参考
 
