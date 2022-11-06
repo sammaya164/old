@@ -52,6 +52,10 @@ VBScriptを動かしているWSHにも32bit版と64bit版があります。
 Accessがインストールされていなくても、VBScriptでMDBファイルを作成することができます。
 
 ```vb
+'AccessのMDBファイルを作成する
+
+Option Explicit
+
 Dim con 'Connectionオブジェクト
 Dim cat 'Catalogオブジェクト
 Dim tbl 'Tableオブジェクト
@@ -62,7 +66,7 @@ Set cat = CreateObject("ADOX.Catalog")
 Set tbl = CreateObject("ADOX.Table")
 
 'test.mdbを削除する
-'call ClearTestFile("test.mdb") '必要に応じてアンコメント
+call ClearTestFile("test.mdb")
 
 con.ConnectionString = "Provider=Microsoft.JET.OLEDB.4.0;Data Source=test.mdb;" '接続文字列
 
@@ -85,8 +89,12 @@ cols.Append "テキスト", 202
 '列を削除する
 cols.Delete "短整数"
 
-'列を確認する
+'列を確認する1
 Msgbox GetColInfo(cols)
+
+'列を確認する2
+Msgbox GetColInfo2(cols)
+
 
 '終了
 
@@ -123,7 +131,7 @@ End Function
 
 
 
-'Columnsコレクションに含まれる列の名前とタイプとサイズを返す
+'Columnsコレクションに含まれる列の名前とタイプを返す(その1)
 Function GetColInfo(cols)
     Dim col
     Dim buf
@@ -136,8 +144,55 @@ Function GetColInfo(cols)
     GetColInfo = buf
 
 End Function
+
+
+
+'Columnsコレクションに含まれる列の名前とタイプを返す(その2)
+Function GetColInfo2(cols)
+    Dim i
+    Dim buf
+
+    For i = 0 To cols.Count - 1
+        buf = buf & cols(i).Name & ", タイプ: " & cols(i).Type & vbCr 
+
+    Next
+
+    GetColInfo2 = buf
+
+End Function
 ```
 
+64bitのWindowsでは、上記スクリプトファイルをWクリックで起動してもConnectionオブジェクトが動かないのでエラーになります。
+
+32bit版のWSHから起動するために、下記スクリプトファイルを作成し、これに上記スクリプトファイルをドラッグ&ドロップすると正常に動作するはずです。
+
+どちらもShift_JISの文字コードで保存してください。
+
+```vb
+'このスクリプトファイルにドラッグ&ドロップしたスクリプトファイルを32bit版のWSHで実行する
+
+Option Explicit
+
+Dim shell 'WshShellオブジェクト
+Dim fso   'FileSystemObjectオブジェクト
+Dim path
+
+
+If WScript.Arguments.Count = 1 Then '1ファイルをドラッグ＆ドロップしたとき
+    Set shell = CreateObject("WScript.Shell")
+    Set fso   = CreateObject("Scripting.FileSystemObject")
+
+    'ドラッグ＆ドロップしたスクリプトファイルのパス
+    path = WScript.Arguments(0)
+
+    '作業フォルダとしてpathの親フォルダを指定
+    shell.CurrentDirectory = fso.GetParentFolderName(path)
+
+    '32bit版WSHでスクリプトを実行する
+    shell.Run "C:\windows\SysWOW64\wscript.exe """ & path & """"
+
+End If
+```
 
 ## 参考
 
