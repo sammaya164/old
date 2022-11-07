@@ -19,36 +19,13 @@ header:
 ---
 
 
-<div
-  style=" background-image: url('/vbscript/assets/images/about_382.jpg');"
->
-  
-    <div class="wrapper">
-      <h1 id="page-title" class="page__title" itemprop="headline">
-        
-          About
+<div>
+  ![cat](/vbscript/assets/images/about_382.jpg)
 
-        
-      </h1>
-      
-      <p class="page__lead">Excerpt
-      </p>
-      
-      
-
-
-      
-      
-      <p>
-        
-          <a href="https://www.sammaya.jp/vbscript/" class="btn btn--light-outline btn--large">VBScriptさんま屋</a>  
-          <a href="https://www.sammaya.jp/comp/" class="btn btn--light-outline btn--large">電脳宮殿</a>
-      </p>
-        
-    </div>
   
-  
-    <span class="page__hero-caption">Image by <a href="https://pixabay.com/users/anilsharma26-13475484/?utm_source=link-attribution&amp;utm_medium=referral&amp;utm_campaign=image&amp;utm_content=7017939">Anil sharma</a> from <a href="https://pixabay.com//?utm_source=link-attribution&amp;utm_medium=referral&amp;utm_campaign=image&amp;utm_content=7017939">Pixabay</a>
+ 
+      
+ <span class="page__hero-caption">Image by <a href="https://pixabay.com/users/anilsharma26-13475484/?utm_source=link-attribution&amp;utm_medium=referral&amp;utm_campaign=image&amp;utm_content=7017939">Anil sharma</a> from <a href="https://pixabay.com//?utm_source=link-attribution&amp;utm_medium=referral&amp;utm_campaign=image&amp;utm_content=7017939">Pixabay</a>
 </span>
   
 </div>
