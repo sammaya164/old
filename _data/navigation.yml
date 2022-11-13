@@ -50,6 +50,8 @@ docs:
     children:
       - title: "Access形式データベースへの接続1"
         url: /mdb1/
+      - title: "Access形式データベースへの接続2"
+        url: /mdb2/
   - title: "その他"
     children:
       - title: "VBScriptの暗号化"
