@@ -66,9 +66,15 @@ con.Close '接続を閉じる
 
 |オブジェクト|プロパティ、メソッド|
 |---|---|
-|Column|Name<br/>Type<br/>Attributes<br/>DefinedSize, NumeriScale, Precision, ParentCatalog, RelatedColumn, |
-|Group|Name, GetPermission, SetPermission, SortOrder, Properties|
-|||
+|Column|Name<br/>Type<br/>Attributes<br/>DefinedSize<br/>NumeriScale<br/>Precision<br/>ParentCatalog<br/>RelatedColumn<br/>SortOrder<br/>Properties|
+|Group|Name<br/>GetPermission<br/>SetPermission<br/>Users<br/>Properties|
+|Index|Name<br/>Columns<br/>Unique<br/>PrimaryKeys<br/>IndexNulls<br/>Clustered<br/>Properties|
+|Key|Name<br/>Type<br/>Columns<br/>RelatedTable<br/>DeleteRule><br/>UpdateRule|
+|Procedure|Name<br/>Command<br/>DateCreated<br/>DateModified|
+|Table|Name<br/>Type<br/>Columns<br/>Indexes<br/>Keys<br/>ParentCatalog<br/>DateCreated<br/>DateModified<br/>Properties|
+||<br/><br/><br/><br/><br/><br/>|
+||<br/><br/><br/><br/><br/><br/>|
+||<br/><br/><br/><br/><br/><br/>|
 |||
 |||
 |||
