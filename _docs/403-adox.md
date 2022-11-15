@@ -5,6 +5,19 @@ last_modified_at: 2022-11-15T14:00:00+09:00
 toc: true
 ---
 
+## ADOXのオブジェクト
+
+|オブジェクト|プロパティ|メソッド|
+|---|---|---|
+|Catalog|ActiveConnection|Create<br/>GetObjectOwner<br/>SetObjectOwner|
+|Column|Name<br/>Type<br/>Attributes<br/>DefinedSize<br/>NumeriScale<br/>Precision<br/>ParentCatalog<br/>RelatedColumn<br/>SortOrder<br/>Properties||
+|Group|Name<br/>Users<br/>Properties|GetPermission<br/>SetPermission|
+|Index|Name<br/>Columns<br/>Unique<br/>PrimaryKeys<br/>IndexNulls<br/>Clustered<br/>Properties||
+|Key|Name<br/>Type<br/>Columns<br/>RelatedTable<br/>DeleteRule><br/>UpdateRule||
+|Procedure|Name<br/>Command<br/>DateCreated<br/>DateModified||
+|Table|Name<br/>Type<br/>Columns<br/>Indexes<br/>Keys<br/>ParentCatalog<br/>DateCreated<br/>DateModified<br/>Properties||
+|User|Name<br/>Groups<br/>Properties|ChangePassword<br/>GetPermission<br/>SetPermission|
+|View|Name<br/>Command<br/>DateCreated<br/>DateModified||
 
 ## Catalogオブジェクト
 
@@ -62,16 +75,15 @@ con.Close '接続を閉じる
 
 ```
 
-## Catalog以外のオブジェクト
+## ADOXのコレクション
 
 |オブジェクト|プロパティ|メソッド|
 |---|---|---|
-|Column|Name<br/>Type<br/>Attributes<br/>DefinedSize<br/>NumeriScale<br/>Precision<br/>ParentCatalog<br/>RelatedColumn<br/>SortOrder<br/>Properties||
-|Group|Name<br/>Users<br/>Properties|GetPermission<br/>SetPermission|
-|Index|Name<br/>Columns<br/>Unique<br/>PrimaryKeys<br/>IndexNulls<br/>Clustered<br/>Properties||
-|Key|Name<br/>Type<br/>Columns<br/>RelatedTable<br/>DeleteRule><br/>UpdateRule||
-|Procedure|Name<br/>Command<br/>DateCreated<br/>DateModified||
-|Table|Name<br/>Type<br/>Columns<br/>Indexes<br/>Keys<br/>ParentCatalog<br/>DateCreated<br/>DateModified<br/>Properties||
-|User|Name<br/>Groups<br/>Properties|ChangePassword<br/>GetPermission<br/>SetPermission|
-|View|Name<br/>Command<br/>DateCreated<br/>DateModified||
-||<br/><br/><br/><br/><br/><br/>||
+|Columns|Item<br/>Count|Append<br/>Delete<br/>Refresh|
+|Groups|Item<br/>Count|Append<br/>Delete<br/>Refresh|
+|Indexes|Item<br/>Count|Append<br/>Delete<br/>Refresh|
+|Keys|Item<br/>Count|Append<br/>Delete<br/>Refresh|
+||Item<br/>Count|Append<br/>Delete<br/>Refresh|
+||Item<br/>Count|Append<br/>Delete<br/>Refresh|
+||Item<br/>Count|Append<br/>Delete<br/>Refresh|
+||Item<br/>Count|Append<br/>Delete<br/>Refresh|
