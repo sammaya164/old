@@ -38,11 +38,11 @@ toc: true
 (その1) Connectionオブジェクトを引数にして呼び出す
 
 ```vb
-Dim con              'Connectionオブジェクト
 Dim cat              'Catalogオブジェクト
+Dim con              'Connectionオブジェクト
 
-Set con = CreateObject("ADODB.Connection")
 Set cat = CreateObject("ADOX.Catalog")
+Set con = CreateObject("ADODB.Connection")
 
 con.ConnectionString = "Provider=Microsoft.JET.OLEDB.4.0;Data Source=test.mdb;"
 cat.Create con 'データベースを作成
@@ -70,9 +70,7 @@ Set cat = CreateObject("ADOX.Catalog")
 Set con = cat.Create("Provider=Microsoft.JET.OLEDB.4.0;Data Source=test.mdb;") 'データベースを作成
 
 MsgBox TypeName(con) 'Connectionと表示される
-
 con.Close '接続を閉じる
-
 ```
 
 ## ADOXのコレクション
@@ -83,7 +81,18 @@ con.Close '接続を閉じる
 |Groups|Item<br/>Count|Append<br/>Delete<br/>Refresh|
 |Indexes|Item<br/>Count|Append<br/>Delete<br/>Refresh|
 |Keys|Item<br/>Count|Append<br/>Delete<br/>Refresh|
-||Item<br/>Count|Append<br/>Delete<br/>Refresh|
-||Item<br/>Count|Append<br/>Delete<br/>Refresh|
-||Item<br/>Count|Append<br/>Delete<br/>Refresh|
-||Item<br/>Count|Append<br/>Delete<br/>Refresh|
+|Procedures|Item<br/>Count|Append<br/>Delete<br/>Refresh|
+|Tables|Item<br/>Count|Append<br/>Delete<br/>Refresh|
+|Users|Item<br/>Count|Append<br/>Delete<br/>Refresh|
+|Views|Item<br/>Count|Append<br/>Delete<br/>Refresh|
+
+## Tablesコレクション
+
+|プロパティ|説明|
+|---|---|
+|Item|メンバー(Table)を
+
+
+|メソッド|説明|
+|---|---|
+|Append|メンバー(Table)を追加する|
