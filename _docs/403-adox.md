@@ -64,20 +64,14 @@ con.Close '接続を閉じる
 
 ## Catalog以外のオブジェクト
 
-|オブジェクト|プロパティ、メソッド|
-|---|---|
-|Column|Name<br/>Type<br/>Attributes<br/>DefinedSize<br/>NumeriScale<br/>Precision<br/>ParentCatalog<br/>RelatedColumn<br/>SortOrder<br/>Properties|
-|Group|Name<br/>GetPermission<br/>SetPermission<br/>Users<br/>Properties|
-|Index|Name<br/>Columns<br/>Unique<br/>PrimaryKeys<br/>IndexNulls<br/>Clustered<br/>Properties|
-|Key|Name<br/>Type<br/>Columns<br/>RelatedTable<br/>DeleteRule><br/>UpdateRule|
-|Procedure|Name<br/>Command<br/>DateCreated<br/>DateModified|
-|Table|Name<br/>Type<br/>Columns<br/>Indexes<br/>Keys<br/>ParentCatalog<br/>DateCreated<br/>DateModified<br/>Properties|
-||<br/><br/><br/><br/><br/><br/>|
-||<br/><br/><br/><br/><br/><br/>|
-||<br/><br/><br/><br/><br/><br/>|
-|||
-|||
-|||
-|||
-|||
-
+|オブジェクト|プロパティ|メソッド|
+|---|---|---|
+|Column|Name<br/>Type<br/>Attributes<br/>DefinedSize<br/>NumeriScale<br/>Precision<br/>ParentCatalog<br/>RelatedColumn<br/>SortOrder<br/>Properties||
+|Group|Name<br/>Users<br/>Properties|GetPermission<br/>SetPermission|
+|Index|Name<br/>Columns<br/>Unique<br/>PrimaryKeys<br/>IndexNulls<br/>Clustered<br/>Properties||
+|Key|Name<br/>Type<br/>Columns<br/>RelatedTable<br/>DeleteRule><br/>UpdateRule||
+|Procedure|Name<br/>Command<br/>DateCreated<br/>DateModified||
+|Table|Name<br/>Type<br/>Columns<br/>Indexes<br/>Keys<br/>ParentCatalog<br/>DateCreated<br/>DateModified<br/>Properties||
+|User|Name<br/>Groups<br/>Properties|ChangePassword<br/>GetPermission<br/>SetPermission|
+|View|Name<br/>Command<br/>DateCreated<br/>DateModified||
+||<br/><br/><br/><br/><br/><br/>||
