@@ -17,12 +17,12 @@ toc: true
 |メソッド|説明|
 |---|---|
 |Create|新しいカタログを作成する|
-|GetObjectOwner|オブジェクトの所有者を設定する|
-|SetObjectOwner|オブジェクトの所有者を取得する|
+|GetObjectOwner|オブジェクトの所有者を取得する|
+|SetObjectOwner|オブジェクトの所有者を設定する|
 
 ### Createの使用例
 
-- Connectionオブジェクトを引数にして呼び出す
+(その1) Connectionオブジェクトを引数にして呼び出す
 
 ```vb
 Dim con              'Connectionオブジェクト
@@ -36,7 +36,7 @@ cat.Create con 'データベースを作成
 
 ```
 
-- 接続文字列を引数にして呼び出す
+(その2) 接続文字列を引数にして呼び出す
 
 ```vb
 Dim cat              'Catalogオブジェクト
@@ -54,7 +54,6 @@ Dim cat              'Catalogオブジェクト
 Dim con              'Connectionオブジェクト
 
 Set cat = CreateObject("ADOX.Catalog")
-
 Set con = cat.Create("Provider=Microsoft.JET.OLEDB.4.0;Data Source=test.mdb;") 'データベースを作成
 
 MsgBox TypeName(con) 'Connectionと表示される
