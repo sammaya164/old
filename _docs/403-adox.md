@@ -5,7 +5,7 @@ last_modified_at: 2022-11-15T14:00:00+09:00
 toc: true
 ---
 
-## ADOXのオブジェクト
+## ADOXのオブジェクトとコレクション
 
 |オブジェクト|プロパティ|メソッド|
 |---|---|---|
@@ -18,6 +18,17 @@ toc: true
 |Table|Name<br/>Type<br/>Columns<br/>Indexes<br/>Keys<br/>ParentCatalog<br/>DateCreated<br/>DateModified<br/>Properties||
 |User|Name<br/>Groups<br/>Properties|ChangePassword<br/>GetPermission<br/>SetPermission|
 |View|Name<br/>Command<br/>DateCreated<br/>DateModified||
+
+|コレクション|プロパティ|メソッド|
+|---|---|---|
+|Columns|Item<br/>Count|Append<br/>Delete<br/>Refresh|
+|Groups|Item<br/>Count|Append<br/>Delete<br/>Refresh|
+|Indexes|Item<br/>Count|Append<br/>Delete<br/>Refresh|
+|Keys|Item<br/>Count|Append<br/>Delete<br/>Refresh|
+|Procedures|Item<br/>Count|Append<br/>Delete<br/>Refresh|
+|Tables|Item<br/>Count|Append<br/>Delete<br/>Refresh|
+|Users|Item<br/>Count|Append<br/>Delete<br/>Refresh|
+|Views|Item<br/>Count|Append<br/>Delete<br/>Refresh|
 
 ## Catalogオブジェクト
 
@@ -73,24 +84,11 @@ MsgBox TypeName(con) 'Connectionと表示される
 con.Close '接続を閉じる
 ```
 
-## ADOXのコレクション
-
-|オブジェクト|プロパティ|メソッド|
-|---|---|---|
-|Columns|Item<br/>Count|Append<br/>Delete<br/>Refresh|
-|Groups|Item<br/>Count|Append<br/>Delete<br/>Refresh|
-|Indexes|Item<br/>Count|Append<br/>Delete<br/>Refresh|
-|Keys|Item<br/>Count|Append<br/>Delete<br/>Refresh|
-|Procedures|Item<br/>Count|Append<br/>Delete<br/>Refresh|
-|Tables|Item<br/>Count|Append<br/>Delete<br/>Refresh|
-|Users|Item<br/>Count|Append<br/>Delete<br/>Refresh|
-|Views|Item<br/>Count|Append<br/>Delete<br/>Refresh|
-
 ## Tablesコレクション
 
 |プロパティ|説明|
 |---|---|
-|Item|メンバー(Table)を
+|Item|引数で指定したメンバー(Table)を示す|
 
 
 |メソッド|説明|
