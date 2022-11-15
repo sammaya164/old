@@ -61,3 +61,17 @@ MsgBox TypeName(con) 'Connectionと表示される
 con.Close '接続を閉じる
 
 ```
+
+## Catalog以外のオブジェクト
+
+|オブジェクト|プロパティ、メソッド|
+|---|---|
+|Column|Name, Type, Attributes, DefinedSize, NumeriScale, Precision, ParentCatalog, RelatedColumn, |
+|Group|Name, GetPermission, SetPermission, SortOrder, Properties|
+|||
+|||
+|||
+|||
+|||
+|||
+
