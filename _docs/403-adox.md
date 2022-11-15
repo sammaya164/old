@@ -1,7 +1,7 @@
 ---
 title: "ADOXの説明"
 permalink: /adox/
-last_modified_at: 2022-11-15T14:00:00+09:00
+last_modified_at: 2022-11-15T23:00:00+09:00
 toc: true
 ---
 
@@ -33,7 +33,7 @@ toc: true
 |GetObjectOwner|オブジェクトの所有者を取得する|
 |SetObjectOwner|オブジェクトの所有者を設定する|
 
-### Createの使用例
+### Createメソッドの使用例
 
 (その1) Connectionオブジェクトを引数にして呼び出す
 
@@ -122,7 +122,25 @@ con.Close '接続を閉じる
 - 第2引数: 列のデータ型
 - 第3引数: 文字列のサイズ(任意)
 
-### テーブルと列を追加する例
+### データ型の種類
+
+使用頻度の高いデータ型は次のとおり。  
+VBScriptでは下表の「定数」を使えないので「値」で指定する。
+
+|定数|値|サイズ|説明|
+|---|---|---|---|
+|adSmallInt|2|2バイト|符号付き整数、VBScriptのIntegerに相当|
+|adInteger|3|4バイト|符号付き整数、VBScriptのLongに相当|
+|adSIngle|4|4バイト|単精度浮動小数点型、VBScriptのSingleに相当|
+|adDouble|5|8バイト|倍精度浮動小数点型、VBScriptのDoubleに相当|
+|adCurrency|6|8バイト|通貨型、小数点以下4桁の固定小数点|
+|adDate|7|8バイト|日付/時刻型|
+|adBoolean|11||ブール型|
+|adBigInt|20|8バイト|符号付き整数|
+|adVarWChar|202|255バイト|テキスト型、Unicode文字列|
+|adLongVarWChar|203||メモ型、長いUnicode文字列|
+
+## テーブルと列を追加する例
 
 ```vb
 Dim cat  'Catalogオブジェクト
@@ -145,22 +163,4 @@ cols.Append "内容", 203      'メモ型
 cols.Append "要約", 202, 40  'テキスト型, 最大40文字
 
 ```
-
-### データ型
-
-使用頻度が高い型は次のとおり。
-
-|定数|値|サイズ|説明|
-|---|---|---|---|
-|adSmallInt|2|2バイト|符号付き整数、VBScriptのIntegerに相当|
-|adInteger|3|4バイト|符号付き整数、VBScriptのLongに相当|
-|adSIngle|4|4バイト|単精度浮動小数点型、VBScriptのSingleに相当|
-|adDouble|5|8バイト|倍精度浮動小数点型、VBScriptのDoubleに相当|
-|adCurrency|8バイト|通貨型、小数点以下4桁の固定小数点|
-|adDate|7|8バイト|日付/時刻型|
-|adBoolean|11||ブール値|
-|adBigInt|20|8バイト|符号付き整数|
-|adVarWChar|202|255バイト|テキスト型、Unicode文字列|
-|adLongVarWChar|203||メモ型、長いUnicode文字列|
-
 
