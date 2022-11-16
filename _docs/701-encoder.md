@@ -18,11 +18,12 @@ VBScriptを組織内の不特定多数で使用する場合にはコードを改
 次のコードはhttps://gallery.technet.microsoft.com/scriptcenter/16439c02-3296-4ec8-9134-6eb6fb599880
 からの転載である。
 
+2020年にTechNetギャラリーが廃止された為、転載元は無くなっている。
+{: .notice--info}
+
 dim->Dim、set->Setなど元の記述から小文字/大文字を一部変更した。
 {: .notice--info}
 
-2020年にTechNetギャラリーが廃止された為、転載元は無くなっている。
-{: .notice--info}
 
 ```vb
 Option Explicit 
@@ -61,11 +62,13 @@ Next
 
 ||説明|値|
 |---|---|---|
-|第1引数|拡張子|".vbs"<br/>".js"<br/>"html"<br/>"htm"<br/>他|
+|第1引数|拡張子|".vbs"<br/>".js"<br/>".html"<br/>".htm"<br/>他|
 |第2引数|暗号化前のテキスト||
 |第3引数|フラグ?|0|
-|第4引数|デフォルト言語|""(これで良い)<br/>"VBScript"<br/>"JScript"|
+|第4引数|デフォルト言語|""<br/>"VBScript"<br/>"JScript"|
 |戻り値|暗号化後のテキスト||
 
+第4引数は""で良い。
+{: .notice}
 
 前掲のスクリプトを少し変更すれば、JScriptやHTMLも暗号化できそう。
