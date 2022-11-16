@@ -5,7 +5,7 @@ last_modified_at: 2022-11-16T14:00:00+09:00
 toc: true
 ---
 
-## 個人的な動機
+## 個人的動機
 
 VBScriptを組織内の不特定多数で使用する場合にはコードを改変される可能性がある。
 
@@ -18,7 +18,8 @@ scrrun.dllのEncoderオブジェクトを利用してVBScriptを暗号化する�
 
 ## 暗号化のスクリプト
 
-次のコードはhttps://gallery.technet.microsoft.com/scriptcenter/16439c02-3296-4ec8-9134-6eb6fb599880からの転載。
+次のコードはhttps://gallery.technet.microsoft.com/scriptcenter/16439c02-3296-4ec8-9134-6eb6fb599880
+からの転載である。
 2020年にTechNetギャラリーが廃止された為、転載元は無くなっている。
 
 {% highlight vb %}
@@ -45,8 +46,8 @@ For i = 0 to oFilesToEncode.Count - 1
 Next 
 {% endhighlight %}
 
-dim->Dim、set->Setなど元の記述から小文字/大文字を一部変更してます。
-{: .notice-info}
+dim->Dim、set->Setなど元の記述から小文字/大文字を一部変更した。
+{: .notice--info}
 
 ## 使い方
 
@@ -55,6 +56,7 @@ dim->Dim、set->Setなど元の記述から小文字/大文字を一部変更し
 1. 複数のvbsファイルをまとめてドラッグ＆ドロップすることもできる。
 
 暗号化したコードを復号化するツールも存在するらしいので、コードの改変を完全に防げるわけではない。
+{: .notice--info}
 
 ## EncodeScriptFileメソッド
 
@@ -68,4 +70,4 @@ dim->Dim、set->Setなど元の記述から小文字/大文字を一部変更し
 
 第4引数は""で良い。
 
-JScriptやHTMLも暗号化できそう。
+前掲のスクリプトを少し変更すれば、JScriptやHTMLも暗号化できそう。
