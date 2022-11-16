@@ -13,16 +13,18 @@ VBScriptを組織内の不特定多数で使用する場合にはコードを改
 
 コードの改変を簡単にできないようにする手段として、コードを暗号化するという選択肢がある。
 
-以前は Windows Script Encoder というツールがマイクロソフトから提供されていたが、現在はWindows OSに標準で暗号化機能が用意されている。
-scrrun.dllのEncoderオブジェクトを利用してVBScriptを暗号化するスクリプトを作成できる。
-
 ## 暗号化のスクリプト
 
 次のコードはhttps://gallery.technet.microsoft.com/scriptcenter/16439c02-3296-4ec8-9134-6eb6fb599880
 からの転載である。
-2020年にTechNetギャラリーが廃止された為、転載元は無くなっている。
 
-{% highlight vb %}
+dim->Dim、set->Setなど元の記述から小文字/大文字を一部変更した。
+{: .notice--info}
+
+2020年にTechNetギャラリーが廃止された為、転載元は無くなっている。
+{: .notice--info}
+
+```vb
 Option Explicit 
  
 Dim oEncoder, oFilesToEncode, file, sDest 
@@ -44,10 +46,7 @@ For i = 0 to oFilesToEncode.Count - 1
     oEncFile.Write sDest 
     oEncFile.Close 
 Next 
-{% endhighlight %}
-
-dim->Dim、set->Setなど元の記述から小文字/大文字を一部変更した。
-{: .notice--info}
+```
 
 ## 使い方
 
@@ -58,16 +57,15 @@ dim->Dim、set->Setなど元の記述から小文字/大文字を一部変更し
 暗号化したコードを復号化するツールも存在するらしいので、コードの改変を完全に防げるわけではない。
 {: .notice--info}
 
-## EncodeScriptFileメソッド
+## EncoderオブジェクトのEncodeScriptFileメソッド
 
 ||説明|値|
 |---|---|---|
-|第1引数|拡張子|".vbs",".js","html","htm",他|
+|第1引数|拡張子|".vbs"<br/>".js"<br/>"html"<br/>"htm"<br/>他|
 |第2引数|暗号化前のテキスト||
 |第3引数|フラグ?|0|
-|第4引数|デフォルト言語|"","VBScript","JScript"|
+|第4引数|デフォルト言語|""(これで良い)<br/>"VBScript"<br/>"JScript"|
 |戻り値|暗号化後のテキスト||
 
-第4引数は""で良い。
 
 前掲のスクリプトを少し変更すれば、JScriptやHTMLも暗号化できそう。
