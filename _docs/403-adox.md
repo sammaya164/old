@@ -164,3 +164,7 @@ cols.Append "要約", 202, 40  'テキスト型, 最大40文字
 
 ```
 
+## 参考
+
+- [ADO プログラマのリファレンス トピック (MicroSoft Learn)](https://learn.microsoft.com/ja-jp/office/client-developer/access/desktop-database-reference/ado-programmer-s-reference-topics)
+- [The Connection Strings Reference](https://www.connectionstrings.com/)
