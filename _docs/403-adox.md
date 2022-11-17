@@ -129,11 +129,11 @@ con.Close '接続を閉じる
 |引数|説明|備考|
 |---|---|---|
 |第1引数|列の名前||
-|第2引数|列のデータ型|
-|第3引数|文字列のサイズ|省略可|
+|第2引数|データ型||
+|第3引数|文字列、バイナリのサイズを指定||
 
 
-### テーブルと列を追加する例
+## テーブルと列を追加する例
 
 ```vb
 Dim cat  'Catalogオブジェクト
@@ -151,66 +151,11 @@ cat.Tables.Append tbl '日記テーブルを追加
 Set cols = cat.Tables("日記").Columns '日記テーブルのColumnsコレクションを取得
 
 '列を追加する
-cols.Append "日付", 7        '日付/時刻型
-cols.Append "内容", 203      'メモ型
-cols.Append "要約", 202, 40  'テキスト型, 最大40文字
+cols.Append "日付", 7         '日付/時刻型
+cols.Append "内容", 203, 1000 '文字列, サイズ1000
 ```
-
-
-### データ型の種類
-    
-VBAでは「定数」も使えるが、VBScriptでは「値」で指定する。
-
-使用頻度の高いデータ型:
-
-|定数|値|サイズ|説明|
-|---|---|---|---|
-|adSmallInt|2|2バイト|符号付き整数<br/>VBScriptのIntegerに相当|
-|adInteger|3|4バイト|符号付き整数<br/>VBScriptのLongに相当|
-|adSIngle|4|4バイト|単精度浮動小数点型|
-|adDouble|5|8バイト|倍精度浮動小数点型|
-|adCurrency|6|8バイト|通貨型、小数点以下4桁の固定小数点|
-|adDate|7|8バイト|日付/時刻型|
-|adBoolean|11||ブール値|
-|adBigInt|20|8バイト|符号付き整数|
-|adVarWChar|202|255バイト|テキスト型、Unicode文字列|
-|adLongVarWChar|203|536,870,910バイト|メモ型、長いUnicode文字列|
-
-ほかのデータ型:
-
-|定数|値|サイズ|説明|
-|---|---|---|---|
-|adEmpty|0||値なし|
-|adBSTR|8||Unicode文字列|
-|adError|10|4バイト|エラーコード|
-|adDecimal|14||正確な数値|
-|adTinyInt|16|1バイト|符号付き整数|
-|adUnsignedTinyInt|17|1バイト|符号なし整数|
-|adUnsignedSmallInt|18|2バイト|符号なし整数|
-|adUnsignedInt|19|4バイト|符号なし整数|
-|adUnsignedBigInt|21|8バイト|符号なし整数|
-|adFileTime|64|8バイト|1601年1月1日からの時間|
-|adGUID|72||グローバル一意識別子(GUID)|
-|adChar|129|12バイト|文字列、ブランクが補われる|
-|adBinary|128||バイナリ値|
-|adWChar|130||Unicode文字列|
-|adNumeric|131||正確な数値|
-|adUserDefined|132||ユーザ定義の変数|
-|adDBDate|133|6バイト|日付|
-|adDBTime|134|6バイト|時刻|
-|adDBTimeStamp|135|16バイト|日付/時刻|
-|adChapter|136|4バイト|チャプター値|
-|adPropVariant|138||PROPVARIANT|
-|adVarNumeric|139||数値(Parameterオブジェクトのみ)|
-|adVarChar|200||文字列|
-|adLongVarChar|201||長い文字列|
-|adVarBinary|204||バイナリ値(Parameterオブジェクトのみ)|
-|adLongVarBinary|205||ロングバイナリ値|
-
-情報間違ってたらすいません。
 
 
 ## 参考
 
 - [ADO プログラマのリファレンス トピック (MicroSoft Learn)](https://learn.microsoft.com/ja-jp/office/client-developer/access/desktop-database-reference/ado-programmer-s-reference-topics)
-- [The Connection Strings Reference](https://www.connectionstrings.com/)
