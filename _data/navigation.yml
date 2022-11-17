@@ -56,6 +56,8 @@ docs:
         url: /mdb2/
       - title: "ADOXの説明"
         url: /adox/
+      - title: "ADOのデータ型"
+        url: /fldtype/
   - title: "その他"
     children:
       - title: "VBScriptの暗号化"
