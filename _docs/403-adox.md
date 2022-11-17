@@ -1,7 +1,7 @@
 ---
 title: "ADOXの説明"
 permalink: /adox/
-last_modified_at: 2022-11-15T23:00:00+09:00
+last_modified_at: 2022-11-17T10:00:00+09:00
 toc: true
 ---
 
@@ -19,7 +19,9 @@ toc: true
 |User|Name<br/>Groups<br/>Properties|ChangePassword<br/>GetPermission<br/>SetPermission|
 |View|Name<br/>Command<br/>DateCreated<br/>DateModified||
 
+
 ## Catalogオブジェクト
+
 
 ### プロパティとメソッド
 
@@ -32,6 +34,7 @@ toc: true
 |Create|新しいカタログを作成する|
 |GetObjectOwner|オブジェクトの所有者を取得する|
 |SetObjectOwner|オブジェクトの所有者を設定する|
+
 
 ### Createメソッドの使用例
 
@@ -86,7 +89,9 @@ con.Close '接続を閉じる
 |Users|Item<br/>Count|Append<br/>Delete<br/>Refresh|
 |Views|Item<br/>Count|Append<br/>Delete<br/>Refresh|
 
+
 ## Tablesコレクション
+
 
 ### プロパティとメソッド
 
@@ -101,7 +106,9 @@ con.Close '接続を閉じる
 |Delete|メンバー(テーブル)を削除する|
 |Refresh|変更内容を反映する|
 
+
 ## Columnsコレクション
+
 
 ### プロパティとメソッド
 
@@ -116,31 +123,17 @@ con.Close '接続を閉じる
 |Delete|メンバー(列)を削除する|
 |Refresh|変更内容を反映する|
 
+
 ### Appendメソッドの引数
 
-- 第1引数: 列の名前
-- 第2引数: 列のデータ型
-- 第3引数: 文字列のサイズ(任意)
+|引数|説明|備考|
+|---|---|---|
+|第1引数|列の名前||
+|第2引数|列のデータ型|
+|第3引数|文字列のサイズ|省略可|
 
-### データ型の種類
 
-使用頻度の高いデータ型は次のとおり。  
-VBScriptでは下表の「定数」を使えないので「値」で指定する。
-
-|定数|値|サイズ|説明|
-|---|---|---|---|
-|adSmallInt|2|2バイト|符号付き整数、VBScriptのIntegerに相当|
-|adInteger|3|4バイト|符号付き整数、VBScriptのLongに相当|
-|adSIngle|4|4バイト|単精度浮動小数点型、VBScriptのSingleに相当|
-|adDouble|5|8バイト|倍精度浮動小数点型、VBScriptのDoubleに相当|
-|adCurrency|6|8バイト|通貨型、小数点以下4桁の固定小数点|
-|adDate|7|8バイト|日付/時刻型|
-|adBoolean|11||ブール型|
-|adBigInt|20|8バイト|符号付き整数|
-|adVarWChar|202|255バイト|テキスト型、Unicode文字列|
-|adLongVarWChar|203||メモ型、長いUnicode文字列|
-
-## テーブルと列を追加する例
+### テーブルと列を追加する例
 
 ```vb
 Dim cat  'Catalogオブジェクト
@@ -161,8 +154,60 @@ Set cols = cat.Tables("日記").Columns '日記テーブルのColumnsコレク�
 cols.Append "日付", 7        '日付/時刻型
 cols.Append "内容", 203      'メモ型
 cols.Append "要約", 202, 40  'テキスト型, 最大40文字
-
 ```
+
+
+### データ型の種類
+    
+VBAでは「定数」も使えるが、VBScriptでは「値」で指定する。
+
+使用頻度の高いデータ型:
+
+|定数| 値 |サイズ|説明|
+|---|---|---|---|
+|adSmallInt|2|2バイト|符号付き整数、VBScriptのIntegerに相当|
+|adInteger|3|4バイト|符号付き整数、VBScriptのLongに相当|
+|adSIngle|4|4バイト|単精度浮動小数点型、VBScriptのSingleに相当|
+|adDouble|5|8バイト|倍精度浮動小数点型、VBScriptのDoubleに相当|
+|adCurrency|6|8バイト|通貨型、小数点以下4桁の固定小数点|
+|adDate|7|8バイト|日付/時刻型|
+|adBoolean|11||ブール型|
+|adBigInt|20|8バイト|符号付き整数|
+|adVarWChar|202|255バイト|テキスト型、Unicode文字列|
+|adLongVarWChar|203|536,870,910バイト|メモ型、長いUnicode文字列|
+
+ほかのデータ型:
+
+|定数|値|サイズ|説明|
+|---|---|---|---|
+|adEmpty|0||値なし|
+|adBSTR|8||Unicode文字列|
+|adError|10|4バイト|エラーコード|
+|adTinyInt|16|1バイト|符号付き整数|
+|adUnsignedTinyInt|17|1バイト|符号なし整数|
+|adUnsignedSmallInt|18|2バイト|符号なし整数|
+|adUnsignedInt|19|4バイト|符号なし整数|
+|adUnsignedBigInt|21|8バイト|符号なし整数|
+|adFileTime|64|8バイト|1601年1月1日からの時間|
+|adGUID|72||グローバル一意識別子(GUID)|
+|adChar|129|12バイト|文字列、ブランクが補われる|
+|adBinary|128||バイナリ値|
+|adWChar|130||Unicode文字列|
+|adNumeric|131||正確な数値|
+|adUserDefined|132||ユーザ定義の変数|
+|adDBDate|133|6バイト|日付|
+|adDBTime|134|6バイト|時刻|
+|adDBTimeStamp|135|16バイト|日付/時刻|
+|adChapter|136|4バイト|チャプター値|
+|adPropVariant|138||PROPVARIANT|
+|adVarNumeric|139||数値(Parameterオブジェクトのみ)|
+|adVarChar|200||文字列|
+|adLongVarChar|201||長い文字列|
+|adVarBinary|204||バイナリ値(Parameterオブジェクトのみ)|
+|adLongVarBinary|205||ロングバイナリ値|
+
+詳細は知らないし、情報間違ってたらすいません。
+
 
 ## 参考
 
