@@ -183,6 +183,7 @@ VBAでは「定数」も使えるが、VBScriptでは「値」で指定する。
 |adEmpty|0||値なし|
 |adBSTR|8||Unicode文字列|
 |adError|10|4バイト|エラーコード|
+|adDecimal|14||正確な数値|
 |adTinyInt|16|1バイト|符号付き整数|
 |adUnsignedTinyInt|17|1バイト|符号なし整数|
 |adUnsignedSmallInt|18|2バイト|符号なし整数|
