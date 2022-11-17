@@ -101,3 +101,8 @@ rs.Close
 
 Msgbox buf
 ```
+
+
+### 実行例
+
+![fldtype](/vbscript/assets/images/fldtype.png)
