@@ -163,15 +163,15 @@ VBAでは「定数」も使えるが、VBScriptでは「値」で指定する。
 
 使用頻度の高いデータ型:
 
-|定数| 値 |サイズ|説明|
+|定数|値|サイズ|説明|
 |---|---|---|---|
-|adSmallInt|2|2バイト|符号付き整数、VBScriptのIntegerに相当|
-|adInteger|3|4バイト|符号付き整数、VBScriptのLongに相当|
-|adSIngle|4|4バイト|単精度浮動小数点型、VBScriptのSingleに相当|
-|adDouble|5|8バイト|倍精度浮動小数点型、VBScriptのDoubleに相当|
+|adSmallInt|2|2バイト|符号付き整数<br/>VBScriptのIntegerに相当|
+|adInteger|3|4バイト|符号付き整数<br/>VBScriptのLongに相当|
+|adSIngle|4|4バイト|単精度浮動小数点型|
+|adDouble|5|8バイト|倍精度浮動小数点型|
 |adCurrency|6|8バイト|通貨型、小数点以下4桁の固定小数点|
 |adDate|7|8バイト|日付/時刻型|
-|adBoolean|11||ブール型|
+|adBoolean|11||ブール値|
 |adBigInt|20|8バイト|符号付き整数|
 |adVarWChar|202|255バイト|テキスト型、Unicode文字列|
 |adLongVarWChar|203|536,870,910バイト|メモ型、長いUnicode文字列|
@@ -206,7 +206,7 @@ VBAでは「定数」も使えるが、VBScriptでは「値」で指定する。
 |adVarBinary|204||バイナリ値(Parameterオブジェクトのみ)|
 |adLongVarBinary|205||ロングバイナリ値|
 
-詳細は知らないし、情報間違ってたらすいません。
+情報間違ってたらすいません。
 
 
 ## 参考
