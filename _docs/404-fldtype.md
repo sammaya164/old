@@ -105,4 +105,4 @@ Msgbox buf
 
 ### 実行例
 
-![fldtype](/vbscript/assets/images/fldType.png)
+![データ型](/vbscript/assets/images/fldtype.jpg)
