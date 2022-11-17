@@ -1,11 +1,11 @@
 ---
 title: "クラスを自作する"
 permalink: /class/
-last_modified_at: 2022-11-01T22:10:00+09:00
-toc: false
+last_modified_at: 2022-11-17T16:00:00+09:00
+toc: true
 ---
 
-クラスの使用例。
+## クラスの使用例
 
 ```vb
 'クラス宣言
@@ -109,9 +109,17 @@ Set P1 = Nothing
 Set P2 = Nothing
 ```
 
-上記コードをメモ帳などに貼り付け、maou.vbsなどの名前で保存。ダブルクリックすると起動します。
-文字コードはShift_JIS(ANSI)でないとエラーになります。
+上記コードをテキストエディタに貼り付け、maou.vbsなどの名前で保存。ダブルクリックすると起動します。
+
+Shift_JIS形式で保存してください。
+{: .notice--info}
+
+## 実行結果
 
 魔王と勇者、どちらかが倒れるまで戦闘が続きます。
 
-![まおう](/vbscript/assets/images/class_maou.png)
+![まおう1](/vbscript/assets/images/maou1.png)
+
+![まおう2](/vbscript/assets/images/maou2.png)
+
+![まおう3](/vbscript/assets/images/maou3.png)
