@@ -118,8 +118,10 @@ Shift_JIS形式で保存してください。
 
 魔王と勇者、どちらかが倒れるまで戦闘が続きます。
 
-![まおう1](/vbscript/assets/images/maou1.png)
+![まおう1](/vbscript/assets/images/maou1.jpg)
 
-![まおう2](/vbscript/assets/images/maou2.png)
+![まおう2](/vbscript/assets/images/maou2.jpg)
 
-![まおう3](/vbscript/assets/images/maou3.png)
+![まおう3](/vbscript/assets/images/maou3.jpg)
+
+![まおう4](/vbscript/assets/images/maou4.jpg)
