@@ -54,7 +54,7 @@ toc: true
 |adLongVarBinary|205||ロングバイナリ値|
 
 
-## データ型のDifinedSizeを確認してみる
+## データ型のDefinedSizeを確認してみる
 
 ```vb
 Dim rs     'レコードセットオブジェクト
