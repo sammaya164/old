@@ -7,7 +7,7 @@ toc: true
 
 ## データ型の一覧
 
-使用頻度が高いのは下表の太字かな。
+使用頻度が高いのは下表の太字でしょうか。(個人差あり)
 
 |定数|値　|サイズ|説明|
 |---|---|---|---|
@@ -84,7 +84,7 @@ flds.Append "DBTime", 134
 flds.Append "DBTimeStamp", 135
 
 rs.Open   '開く
-rs.AddNew 'レコードを1件作成
+rs.AddNew '空のレコードを1件作成
 rs.Update 
 For Each fld In flds
     buf = buf & fld.Name & ", " & fld.DefinedSize & vbCr
@@ -93,5 +93,19 @@ rs.Close  '閉じる
 Msgbox buf
 ```
 
+1. レコードセットを作成
+2. レコードセットが閉じた状態で各データ型のフィールドを追加
+3. レコードセットを開く
+4. レコードが無いとフィールドにアクセスできないので、空のレコードを作成
+5. フィールドにアクセスしてDefinedSizeを取得
 
-![データ型](/vbscript/assets/images/fldtype.jpg)
+
+### 実行結果
+
+![データ型のDefinedSize](/vbscript/assets/images/fldtype.jpg)
+
+文字列やバイナリのDefinedSizeは、Appendメソッドの第3引数で指定したサイズになります。
+{: .notice--info}
+
+adEmptyやadChapterなどはフィールドの作り方がわかりませんでした。
+{: .notice--info}
