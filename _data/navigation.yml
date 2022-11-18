@@ -46,8 +46,12 @@ docs:
         url: /rename/
       - title: "ファイル名、パス名を取得する"
         url: /path/
-      - title: "FileSystemObjectの説明"
+      - title: "FileSystemObjectオブジェクト"
         url: /fso/
+      - title: "TextStreamオブジェクト"
+        url: /textstream/
+      - title: "File、Folder、Driveオブジェクト"
+        url: /file/
   - title: "データベース接続"
     children:
       - title: "Access形式データベースへの接続1"
