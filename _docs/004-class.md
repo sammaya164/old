@@ -1,7 +1,7 @@
 ---
 title: "クラスを自作する"
 permalink: /class/
-last_modified_at: 2022-11-17T16:00:00+09:00
+last_modified_at: 2022-11-17T20:00:00+09:00
 toc: true
 ---
 
@@ -12,28 +12,33 @@ toc: true
 Class C_Player
     'ここでは変数宣言にDimは使えない
 
-    'パブリックなメンバを宣言
+    'パブリックなメンバを宣言(プロパティ)
+    '(クラスの外部からアクセス可能)
     Public Name '名前
     
     'プライベートなメンバを宣言
+    '(クラスの外部からアクセス不可能)
     Private m_life     'ライフ
     Private m_max      'ライフ最大値
     Private m_strength '攻撃力
     Private m_enemy    '敵オブジェクト
 
-    'プロパティへ値の代入を可能にする
+    'Strengthプロパティへ値の代入を可能にする
+    '(クラスの外部から代入可能)
     Public Property Let Strength(val)
         m_strength = val
         m_life = Int(100000 / val)
         m_max = m_life
     End Property
     
-    'プロパティの値を取得可能にする
+    'Strengthプロパティの値を取得可能にする
+    '(クラスの外部から取得可能)
     Public Property Get Strength()
         Strength = m_strength
     End Property
 
-    'プロパティへオブジェクトの代入を可能にする
+    'Enemyプロパティへオブジェクトの代入を可能にする
+    '(クラスの外部から代入可能)
     Public Property Set Enemy(obj)
         Set m_enemy = obj
     End Property
@@ -47,6 +52,7 @@ Class C_Player
     End Sub
     
     'パブリックなSubプロシージャ(メソッド)
+    '(クラスの外部からアクセス可能)
     Public Sub Atack()
         'プロシージャ内ならDimを使える
         Dim buf
@@ -56,6 +62,7 @@ Class C_Player
     End Sub
     
     'パブリックなFunctionプロシージャ(メソッド)
+    '(クラスの外部からアクセス可能)
     Public Function Damage(val)
         m_life = m_life - val
         If m_life < 0 Then m_life = 0
@@ -69,6 +76,7 @@ Class C_Player
     End Function
     
     'プライベートなFunctionプロシージャ
+    '(クラスの外部からアクセス不可能)
     Private Function HasDead()
         If m_life > 0 Then
             HasDead = False
@@ -99,24 +107,26 @@ Set P1.Enemy = P2
 Set P2.Enemy = P1
 
 '乱数ジェネレータを初期化
-Randomize()
+Call Randomize()
 
 '戦闘開始
-P1.Atack()
+Call P1.Atack()
 
 'インスタンスを破棄
 Set P1 = Nothing
 Set P2 = Nothing
 ```
 
-上記コードをテキストエディタに貼り付け、maou.vbsなどの名前で保存。ダブルクリックすると起動します。
+上記コードをテキストエディタに貼り付け、maou.vbsなどの名前で保存してください。
 
-Shift_JIS形式で保存してください。
-{: .notice--info}
+スクリプトファイルはShift_JIS形式で保存してください。(メモ帳の場合エンコードをANSIにする)
+{: .notice--primary}
+
+ダブルクリックすると起動します。  
+魔王と勇者、どちらかが倒れるまで戦闘が続きます。
+
 
 ## 実行結果
-
-魔王と勇者、どちらかが倒れるまで戦闘が続きます。
 
 ![まおう1](/vbscript/assets/images/maou1.jpg)
 
@@ -124,4 +134,14 @@ Shift_JIS形式で保存してください。
 
 ![まおう3](/vbscript/assets/images/maou3.jpg)
 
-![まおう4](/vbscript/assets/images/maou4.jpg)
+
+<div>
+VBAで同じことをしたい場合は、下記手順で動きます。
+    
+1. `Class C_Player` ～ `End Class` の中身だけをクラスモジュールに記載する。
+2. クラスモジュールの名前を `C_Player` に変更する。
+3. `'変数宣言` 以降を標準モジュールの `Sub Maou` ～ `End Sub` に記載する。
+4. 開発タブの `マクロ` をクリックし `Maou` を実行する。
+    
+</div>{: .notice--success}
+
