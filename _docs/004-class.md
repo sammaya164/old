@@ -5,7 +5,7 @@ last_modified_at: 2022-11-17T20:00:00+09:00
 toc: true
 ---
 
-## クラスの使用例
+## クラスの作成例(勇者vs.魔王)
 
 ```vb
 'クラス宣言
@@ -119,14 +119,15 @@ Set P2 = Nothing
 
 上記コードをテキストエディタに貼り付け、maou.vbsなどの名前で保存してください。
 
-スクリプトファイルはShift_JIS形式で保存してください。(メモ帳の場合エンコードをANSIにする)
+Shift_JIS形式で保存してください。
 {: .notice--primary}
+
+
+## 実行結果
 
 ダブルクリックすると起動します。  
 魔王と勇者、どちらかが倒れるまで戦闘が続きます。
 
-
-## 実行結果
 
 ![まおう1](/vbscript/assets/images/maou1.jpg)
 
@@ -135,13 +136,12 @@ Set P2 = Nothing
 ![まおう3](/vbscript/assets/images/maou3.jpg)
 
 
-<div>
-VBAで同じことをしたい場合は、下記手順で動きます。
+## VBAで同じことをしたい場合
+
+下記手順で動きます。
     
 1. `Class C_Player` ～ `End Class` の中身だけをクラスモジュールに記載する。
 2. クラスモジュールの名前を `C_Player` に変更する。
 3. `'変数宣言` 以降を標準モジュールの `Sub Maou` ～ `End Sub` に記載する。
 4. 開発タブの `マクロ` をクリックし `Maou` を実行する。
-    
-</div>{: .notice--success}
 
