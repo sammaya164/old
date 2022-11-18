@@ -9,7 +9,7 @@ toc: true
 
 使用頻度が高いのは下表の太字かな。
 
-|定数|値　|サイズ|説明|
+|定数|値|サイズ|説明|
 |---|---|---|---|
 |adEmpty|0||EMPTY?|
 |adSmallInt|2|2バイト|符号付き整数<br/>(VBScriptのIntegerに相当)|
@@ -29,7 +29,7 @@ toc: true
 |adBigInt|20|8バイト|符号付き整数|
 |adUnsignedBigInt|21|8バイト|符号なし整数|
 |adFileTime|64|8バイト|1601年1月1日からの時間|
-|adGUID|72|16バイト|GUID|
+|adGUID|72|16バイト|GUID、オートナンバー型|
 |adBinary|128||バイナリ値|
 |adChar|129||文字列|
 |adWChar|130||Unicode文字列|
@@ -51,7 +51,7 @@ toc: true
 
 ## 各データ型のDefinedSizeを確認してみる
 
-概要:
+動作概要:
 
 1. レコードセットを作成
 2. レコードセットが閉じた状態で各データ型のフィールドを追加
