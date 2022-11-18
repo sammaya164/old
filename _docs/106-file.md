@@ -22,10 +22,10 @@ toc: true
 
 |メソッド|説明|
 |---|---|
-|Copy()|コピーする|
-|Move()|移動する|
-|Delete()|削除する|
-|OpenAsTextStream()|テキストファイルとして開く|
+|Copy|コピーする|
+|Move|移動する|
+|Delete|削除する|
+|OpenAsTextStream|テキストファイルとして開く|
  
  
 ## Folderオブジェクト
