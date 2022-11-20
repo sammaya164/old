@@ -53,73 +53,92 @@ toc: true
 - 8byte+1byte/枚×10,000枚=10,008byte
 
 
-## 訓練用画像を確認する
+## 訓練用画像を表示する
 
 バイナリファイルからデータを読み込んで、疑似的な画像をダイアログボックス上に表示するプログラムです。
 
 ```vb
-Dim input1
-Dim input2
+'手書き数字画像のバイナリファイルを読んで、疑似的な画像を表示する
 
-'MNISTデータベースファイルをC:\testに保存している場合
-input1 = "C:\test\train-images.idx3-ubyte"
-input2 = "C:\test\train-labels.idx1-ubyte"
+Dim path1, path2
+Dim sm1  , sm2
+Dim num
 
-Dim images
-Dim labels
+'MNISTデータベースファイルをC:\samplesに保存している場合
+path1 = "C:\samples\train-images.idx3-ubyte" '画像データ
+path2 = "C:\samples\train-labels.idx1-ubyte" '値データ
 
 'バイナリ形式でファイルを開く
-Set images = CreateObject("ADODB.Stream")
-Set labels = CreateObject("ADODB.Stream")
-images.Type = 1 'BINARY
-labels.Type = 1 'BINARY
-images.Open
-labels.Open
-images.LoadFromFile(input1)
-labels.LoadFromFile(input2)
+Set sm1 = P_OpenStream(path1)
+Set sm2 = P_OpenStream(path2)
 
-Dim myVal
-Dim label
-Dim image(783)
-Dim i
-Dim buf
-
-Randomize '乱数ジェネレータを初期化
+Call Randomize() '乱数ジェネレータを初期化
 
 'キャンセルボタンが押されるまで繰り返す
 Do
-    myVal = Int((Rnd * 60000) + 1) '1～60000の乱数
-    images.Position = 16 + 784 * (myVal - 1)
-    labels.Position = 8 + (myval - 1)
+    num = Int(Rnd * 60000) '0～59999のランダムな整数
 
-    '1画像の各ピクセルデータを1次元の配列に格納する
-    For i = 0 To 783
-        image(i) = AscB(images.Read(1))
-    Next
-
-    '正解の数値
-    label = AscB(labels.Read(1))
-
-    '画像をダイアログボックス上に疑似的に表示する
-    buf = ""
-    For i = 0 To 783
-        If image(i) > 128 Then
-            buf = buf & "■"
-        Else
-            buf = buf & "□"
-        End If
-
-        If (i + 1) Mod 28 = 0 Then
-            buf = buf & vbCr
-        End If
-    Next
-
-    If Msgbox(buf & vbCr & "正解: " & label, vbOKCancel, "No." & myVal) = vbCancel Then
+    '疑似的な画像を表示する、タイトルに数値を表示する
+    If Msgbox(P_GetImage(num, sm1), vbOKCancel, "正解: " & P_GetValue(num, sm2)) = vbCancel Then
         Exit Do
     End If
     
 Loop
 
-images.Close
-labels.Close
+sm1.Close
+sm2.Close
+
+
+
+'バイナリ形式でファイルを開く
+Function P_OpenStream(path)
+    dim sm
+
+    Set sm = CreateObject("ADODB.Stream")
+    sm.Type = 1 'BINARY
+    sm.Open
+    sm.LoadFromFile(path)
+    Set P_OpenStream = sm 'Streamオブジェクトを返す
+
+End Function
+
+
+
+'疑似的な画像データを取得する
+Function P_GetImage(n, sm)
+    Dim i, j '画像の横と縦の座標
+    Dim bt
+    Dim buf
+
+    sm.Position = 16 + 784 * n '現在位置をn+1番目の画像データの先頭に移動する
+    
+    '1画像の各ピクセルデータから□と■で作成した疑似的な画像を作成する
+    For j = 0 To 27
+        For i = 0 To 27
+            bt = AscB(sm.Read(1)) '1バイト読んで数字に変換
+            If bt <128 Then
+                buf = buf & "■"
+            Else
+                buf = buf & "□"
+            End If
+        Next
+        buf = buf & vbCr
+    Next
+
+    P_GetImage = buf
+
+End Function
+
+
+
+'値データを取得する
+Function P_GetValue(n, sm)
+    sm.Position = 8 + n '現在位置をn+1番目の値データに移動する
+    P_GetValue = AscB(sm.Read(1)) '1バイト読んで数字に変換
+    
+End Function
 ```
+
+### 実行結果
+
+[実行結果](/vbscript/assets/images/mnist.jpg)
