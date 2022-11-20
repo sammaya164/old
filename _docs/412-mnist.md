@@ -1,21 +1,24 @@
 ---
 title: "バイナリファイルを読む"
 permalink: /mnist/
-last_modified_at: 2022-11-19T21:00:00+09:00
+last_modified_at: 2022-11-20T10:49:00+09:00
 toc: true
 ---
 
 
 ## バイナリファイルの入手
 
-ニューラルネットワークの訓練と評価に使用されている手書き数字画像の、MNISTデータベースを[ここ](http://yann.lecun.com/exdb/mnist/)からダウンロードします。
+ニューラルネットワークの訓練と評価に使用されている、MNISTデータベースを[ここ](http://yann.lecun.com/exdb/mnist/)からダウンロードします。
+
+手書き数字画像のデータです。
+{: .notice--info}
 
 - train-images-idx3-ubyte.gz
 - train-labels-idx1-ubyte.gz
 - t10k-images-idx3-ubyte.gz
 - t10k-labels-idx1-ubyte.gz
 
-圧縮されているので7-Zipなどを使って展開すると、下記ファイルになります。
+圧縮されているので7-Zipなどを使って展開します。
 
 |ファイル名|説明|Byte|
 |---|---|---|
@@ -121,7 +124,7 @@ Function P_GetImage(n, sm)
             Else
                 buf = buf & "□"
             End If
-        Next
+        Nextc
         buf = buf & vbCr
     Next
 
@@ -139,6 +142,13 @@ Function P_GetValue(n, sm)
 End Function
 ```
 
+Read(1)で1バイト読むと、現在位置は次のバイトへ移動します。
+{: .notice--primary}
+
+読み取ったバイトをAscB関数で0～255の数値へ変換します。
+{: .notice--primary}
+
+
 ### 実行結果
 
-[実行結果](/vbscript/assets/images/mnist.jpg)
+![実行結果](/vbscript/assets/images/mnist.jpg)
