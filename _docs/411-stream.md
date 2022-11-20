@@ -10,8 +10,8 @@ toc: true
 
 |プロパティ|説明|備考|
 |---|---|---|
-|Charset|保存するときの文字セット||
-|EOS|ストリーム位置の末尾であればTrue|True or False|
+|Charset|保存するときの文字コード||
+|EOS|ストリーム位置の末尾であればTrue|True/False|
 |LineSeparator|テキストの改行文字||
 |Mode|Streamのアクセスモード||
 |Position|Stream内の現在位置|先頭は0|
