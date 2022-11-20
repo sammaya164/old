@@ -62,6 +62,10 @@ docs:
         url: /adox/
       - title: "ADOのデータ型"
         url: /fldtype/
+      - title: "Streamオブジェクト"
+        url: /stream/
+      - title: "バイナリファイルを読む"
+        url: /mnist/
   - title: "その他"
     children:
       - title: "VBScriptの暗号化"
