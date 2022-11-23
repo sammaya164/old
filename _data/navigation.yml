@@ -66,6 +66,10 @@ docs:
         url: /stream/
       - title: "バイナリファイルを読む"
         url: /mnist/
+  - title: "アルゴリズム"
+    children:
+      - title: "カレンダー計算"
+        url: /calender/
   - title: "その他"
     children:
       - title: "VBScriptの暗号化"
