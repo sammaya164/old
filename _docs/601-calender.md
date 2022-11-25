@@ -224,7 +224,7 @@ Function GregorianDate(mjd)
     '2月末日の場合
     If d < 1 Then
         m = 2
-        If arr3(1) = 0 And (Not arr3(2) = 0 Or arr3(3) = 0)  Then
+        If arr3(1) = 0 And (arr3(2) <> 0 Or arr3(3) = 0)  Then
             d = 29 + d
         Else
             d = 28 + d
@@ -259,7 +259,7 @@ Function JulianDate(mjd)
     arr1 = Array(1,365,1461)
     arr2 = Array(0,1,4)
     arr3 = Div(d, arr1)
-    y = Mult(arr2, arr3)
+    y = y + Mult(arr2, arr3)
     d = arr3(0)
 
     '月の計算
