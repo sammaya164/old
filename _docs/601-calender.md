@@ -184,6 +184,7 @@ MJDの計算式に出てくる-678884と-678882は、それぞれユリウス暦
 
 ```vb
 'MJDから日付へ変換して表示する
+Option Explicit
 
 Dim ret
 Dim msg(4)
@@ -224,7 +225,7 @@ Function GregorianDate(mjd)
     '2月末日の場合
     If d < 1 Then
         m = 2
-        If arr3(2) = 0 Then
+        If arr3(1) = 0 And (Not arr3(2) = 0 Or arr3(3) = 0)  Then
             d = 29 + d
         Else
             d = 28 + d
@@ -239,7 +240,7 @@ Function GregorianDate(mjd)
             m = m - 12
         End If
     End If
-    GregorianDate =  Join(Array(y,m,Round(d, 3)), "/") '日は小数点以下3桁で四捨五入
+    GregorianDate =  Join(Array(y,m,Round(d, 3)), "/") '日は小数点以下3桁まで
 End Function
 
 
@@ -266,7 +267,7 @@ Function JulianDate(mjd)
     '2月末日の場合
     If d < 1 Then
         m = 2
-        If arr3(2) = 0 Then
+        If arr3(1) = 0 Then
             d = 29 + d
         Else
             d = 28 + d
@@ -281,7 +282,7 @@ Function JulianDate(mjd)
             m = m - 12
         End If
     End If
-    JulianDate =  Join(Array(y,m,Round(d, 3)), "/") '日は小数点以下3桁で四捨五入
+    JulianDate =  Join(Array(y,m,Round(d, 3)), "/") '日は小数点以下3桁まで
 End Function
 
 
