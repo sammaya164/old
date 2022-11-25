@@ -178,6 +178,149 @@ MJDの計算式に出てくる-678884と-678882は、それぞれユリウス暦
 - 2つの日付間の日数を知りたい場合:  
   一旦ユリウス日や修正ユリウス日に変換して、差を取ります。
 
+### 修正ユリウス日から日付へ変換する
+
+日付への変換は、その逆より難しいです。
+
+```vb
+'MJDから日付へ変換して表示する
+
+Dim ret
+Dim msg(4)
+msg(1) = "ユリウス暦:"
+msg(3) = "グレゴリオ暦:"
+
+Do
+    ret = InputBox("MJDを入力してください。")
+    If ret = "" Then Exit Do
+    ret = CDbl(ret)
+    msg(0) = "MJD=" & ret
+    msg(2) = JulianDate(ret)
+    msg(4) = GregorianDate(ret)
+    Msgbox Join(msg, vbCr)
+Loop
+
+
+
+'MJDからグレゴリオ暦の日付に変換して返す
+Function GregorianDate(mjd)
+    Dim y, m, d
+
+    'MJDをグレゴリオ暦の西暦0年(紀元前1年)2月29日を第0日とした日数へ変換
+    d = mjd - (-678882)
+    y = 0
+    m = 3
+
+    Dim arr1, arr2, arr3
+
+    '年の計算
+    arr1 = Array(1,365,1461,36524,146097)
+    arr2 = Array(0,1,4,100,400)
+    arr3 = Div(d, arr1)
+    y = y + Mult(arr2, arr3)
+    d = arr3(0)
+
+    '月の計算
+    '2月末日の場合
+    If d < 1 Then
+        m = 2
+        If arr3(2) = 0 Then
+            d = 29 + d
+        Else
+            d = 28 + d
+        End If
+    Else '2月末日以外の場合
+        Do While MonthDay(m) < d
+            m = m + 1
+        Loop
+        d = d - MonthDay(m - 1)
+        If m > 12 Then
+            y = y + 1
+            m = m - 12
+        End If
+    End If
+    GregorianDate =  Join(Array(y,m,Round(d, 3)), "/") '日は小数点以下3桁で四捨五入
+End Function
+
+
+
+'MJDからユリウス暦の日付に変換して返す
+Function JulianDate(mjd)
+    Dim y, m, d
+
+    'MJDをユリウス暦の西暦0年(紀元前1年)2月29日を第0日とした日数へ変換
+    d = mjd - (-678884)
+    y = 0
+    m = 3
+
+    Dim arr1, arr2, arr3
+
+    '年の計算
+    arr1 = Array(1,365,1461)
+    arr2 = Array(0,1,4)
+    arr3 = Div(d, arr1)
+    y = Mult(arr2, arr3)
+    d = arr3(0)
+
+    '月の計算
+    '2月末日の場合
+    If d < 1 Then
+        m = 2
+        If arr3(2) = 0 Then
+            d = 29 + d
+        Else
+            d = 28 + d
+        End If
+    Else '2月末日以外の場合
+        Do While MonthDay(m) < d
+            m = m + 1
+        Loop
+        d = d - MonthDay(m - 1)
+        If m > 12 Then
+            y = y + 1
+            m = m - 12
+        End If
+    End If
+    JulianDate =  Join(Array(y,m,Round(d, 3)), "/") '日は小数点以下3桁で四捨五入
+End Function
+
+
+
+'例えばarr=[1,365,1461]の場合、a(0)+365*a(1)+1461*a(2)=valとなる配列aを返す
+Function Div(val, arr)
+    Dim iMax
+    Dim buf
+    Dim i
+
+    iMax = UBound(arr)
+    ReDim buf(iMax)
+    buf(0) = val
+    For i = iMax To 1 Step -1
+        buf(i) = Int(buf(0) / arr(i))     '商の整数部
+        buf(0) = buf(0) - arr(i) * buf(i) '余り(>0が必要)
+    Next
+    Div = buf
+End Function
+
+
+
+'2つの配列の「内積」を返す
+Function Mult(arr1, arr2)
+    Dim i
+
+    For i = 0 To UBound(arr1)
+        Mult = Mult + arr1(i) * arr2(i)
+    Next
+End Function
+
+
+
+'2月末日を第0日としてM月末日までの日数を返す(M=2～13)
+Function MonthDay(M)
+  MonthDay = Int(30.59 * (M - 1)) - 30
+End Function
+```
+
 
 ## 参考
 
