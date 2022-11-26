@@ -68,8 +68,8 @@ docs:
         url: /mnist/
   - title: "アルゴリズム"
     children:
-      - title: "カレンダー計算"
-        url: /calender/
+      - title: "カレンダー計算1"
+        url: /calender1/
   - title: "その他"
     children:
       - title: "VBScriptの暗号化"
