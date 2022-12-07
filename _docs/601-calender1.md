@@ -1,7 +1,7 @@
 ---
 title: "カレンダー計算1"
 permalink: /calender1/
-last_modified_at: 2022-11-27T08:00:00+09:00
+last_modified_at: 2022-12-07T23:00:00+09:00
 toc: true
 ---
 
@@ -171,10 +171,12 @@ MJDの計算式に出てくる-678884と-678882は、それぞれユリウス暦
 次のように書いたほうが、何をやっているかはわかりやすいかも知れません。
 
 ```vb
+' 2月末日を第0日としてM月末日までの日数を返す(M=2～13)
 Function MonthDay(M)
     Dim days(13)
     Dim i
     
+    days(3)  = 31
     days(4)  = 30
     days(5)  = 31
     days(6)  = 30
@@ -186,7 +188,7 @@ Function MonthDay(M)
     days(12) = 31
     days(13) = 31
     
-    For i = 4 To M
+    For i = 3 To M
         MonthDay = MonthDay + days(i)
     Next
 End Function
@@ -254,7 +256,7 @@ Function GregorianDate(mjd)
             m = m - 12
         End If
     End If
-    GregorianDate =  Join(Array(y,m,Round(d, 3)), "/") '日は小数点以下3桁まで
+    GregorianDate =  Join(Array(y,m,Round(d, 5)), "/") '日は小数点以下5桁まで
 End Function
 
 
@@ -296,7 +298,7 @@ Function JulianDate(mjd)
             m = m - 12
         End If
     End If
-    JulianDate =  Join(Array(y,m,Round(d, 3)), "/") '日は小数点以下3桁まで
+    JulianDate =  Join(Array(y,m,Round(d, 5)), "/") '日は小数点以下5桁まで
 End Function
 
 
