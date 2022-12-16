@@ -1,7 +1,7 @@
 ---
 title: "クラスを自作する"
 permalink: /class/
-last_modified_at: 2022-11-17T20:00:00+09:00
+last_modified_at: 2022-12-16T23:30:00+09:00
 toc: true
 ---
 
