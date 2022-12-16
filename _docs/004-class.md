@@ -7,9 +7,9 @@ toc: true
 
 ## クラスの作成例(勇者vs.魔王)
 
-勇者と魔王、どちらかが倒れるまで戦闘が続きます。
+![実行例](/vbscript/assets/images/maou3.jpg)
 
-![魔王](/vbscript/assets/images/maou3.jpg)
+勇者と魔王、どちらかが倒れるまで戦闘が続きます。
 
 ```vb
 'クラス宣言
@@ -121,6 +121,7 @@ Set P1 = Nothing
 Set P2 = Nothing
 ```
 
+
 <button type="button" onclick="maou();">デモを実行する</button>{: .btn .btn--success .btn--large}
 (JavaScript)
 
@@ -176,8 +177,6 @@ Set P2 = Nothing
 
 
 ## VBAで同じことをしたい場合
-
-下記手順で動きます。
     
 1. `Class C_Player` ～ `End Class` の中身をクラスモジュールに記載する。
 2. クラスモジュールの名前を `C_Player` に変更する。
