@@ -128,7 +128,8 @@ Shift_JIS形式で保存してください。
 ダブルクリックすると起動します。  
 魔王と勇者、どちらかが倒れるまで戦闘が続きます。
 
-<button type="button" onclick="maou();">JavaScriptによるデモ</button>{: .btn .btn--success .btn--large}
+<button type="button" onclick="maou();">デモを実行する</button>{: .btn .btn--success .btn--large}
+(JavaScript)
 
 ![魔王](/vbscript/assets/images/maou3.jpg)
 
