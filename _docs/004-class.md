@@ -123,17 +123,62 @@ Shift_JIS形式で保存してください。
 {: .notice--primary}
 
 
-## 実行結果
+## 説明
 
 ダブルクリックすると起動します。  
 魔王と勇者、どちらかが倒れるまで戦闘が続きます。
 
+<button type="button" onclick="maou();">実行例</button>(JavaScript)
 
-![まおう1](/vbscript/assets/images/maou1.jpg)
+<script>
+    // <!--
 
-![まおう2](/vbscript/assets/images/maou2.jpg)
+    class Player{
+      constructor(name, strength){
+        this.name = name;
+        this.strength = strength;
+        this.lifeMax = 100000/strength;
+        this.life = this.lifeMax;
+      }
 
-![まおう3](/vbscript/assets/images/maou3.jpg)
+      damage(val){
+        this.life = this.life - val;
+        if (this.life < 0) {
+          this.life = 0;
+        }
+        alert(this.name + 'は' + val + 'のダメージを受けた\n(´・ω・) ' + this.life + '/' + this.lifeMax);
+        if (this.life == 0) {
+          alert(this.name + 'は倒れた！\n( -ω-) ｽﾔｧ');
+        } else {
+          this.atack();
+        }
+      }
+
+      atack(){
+        alert(this.name + 'の攻撃！')
+        this.enemy.damage(Math.floor(Math.random() * this.strength));
+      }
+
+      get enemy(){
+        return this._enemy;
+      }
+
+      set enemy(obj){
+        this._enemy = obj;
+      }
+    }
+
+    function maou() {
+      
+      let p1 = new Player ('勇者', 100);
+      let p2 = new Player ('魔王', 1000);
+      p1.enemy = p2;
+      p2.enemy = p1;
+      p1.atack();
+    }
+
+    // -->
+</script>
 
 
 ## VBAで同じことをしたい場合
