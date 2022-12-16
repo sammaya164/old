@@ -7,6 +7,10 @@ toc: true
 
 ## クラスの作成例(勇者vs.魔王)
 
+勇者と魔王、どちらかが倒れるまで戦闘が続きます。
+
+![魔王](/vbscript/assets/images/maou3.jpg)
+
 ```vb
 'クラス宣言
 Class C_Player
@@ -117,21 +121,8 @@ Set P1 = Nothing
 Set P2 = Nothing
 ```
 
-上記コードをテキストエディタに貼り付け、maou.vbsなどの名前で保存してください。
-
-Shift_JIS形式で保存してください。
-{: .notice--primary}
-
-
-## 説明
-
-ダブルクリックすると起動します。  
-魔王と勇者、どちらかが倒れるまで戦闘が続きます。
-
 <button type="button" onclick="maou();">デモを実行する</button>{: .btn .btn--success .btn--large}
 (JavaScript)
-
-![魔王](/vbscript/assets/images/maou3.jpg)
 
 <script>
     // <!--
@@ -188,7 +179,7 @@ Shift_JIS形式で保存してください。
 
 下記手順で動きます。
     
-1. `Class C_Player` ～ `End Class` の中身だけをクラスモジュールに記載する。
+1. `Class C_Player` ～ `End Class` の中身をクラスモジュールに記載する。
 2. クラスモジュールの名前を `C_Player` に変更する。
 3. `'変数宣言` 以降を標準モジュールの `Sub Maou` ～ `End Sub` に記載する。
 4. 開発タブの `マクロ` をクリックし `Maou` を実行する。
