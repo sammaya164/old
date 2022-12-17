@@ -1,7 +1,7 @@
 ---
 title: "カレンダー計算2"
 permalink: /calender2/
-last_modified_at: 2022-11-30T22:51:00+09:00
+last_modified_at: 2022-12-17T18:40:00+09:00
 toc: true
 ---
 
@@ -261,7 +261,7 @@ Function GetCalender(y, m)
     Dim j '曜日: 0(日)～6(土)
     Dim buf
 
-    mjd1 = GetMJD(y, m, 1)      '当月1日の修正ユリウス日
+    mjd1 = GetMJD(y, m, 1)     '当月1日の修正ユリウス日
     mjd2 = GetMJD(y, m + 1, 1) '翌月1日の修正ユリウス日
 
     j = (mjd1 + 3) - Int((mjd1 + 3) / 7) * 7 '当月1日の曜日
