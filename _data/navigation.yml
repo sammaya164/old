@@ -70,6 +70,8 @@ docs:
     children:
       - title: "カレンダー計算1"
         url: /calender1/
+      - title: "カレンダー計算2"
+        url: /calender2/
   - title: "その他"
     children:
       - title: "VBScriptの暗号化"
